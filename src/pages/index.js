@@ -1,7 +1,5 @@
 import React from "react"
 
-import { container } from "@components"
-
 export default () => (
   <div className="container">
     <p>Hello!</p>
