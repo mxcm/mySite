@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ["eslint:recommended", "google", "plugin:prettier/recommended"],
+  extends: ["eslint:recommended", "google", "plugin:react/recommended"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -15,8 +15,6 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-  plugins: ["react", "prettier"],
-  rules: {
-    "prettier/prettier": "error",
-  },
+  plugins: ["react", "prettier", "jsx-ally"],
+  rules: {},
 }
