@@ -1,3 +1,9 @@
 import React from "react"
 
-export default () => <div>Hello world!</div>
+import { container } from "@components"
+
+export default () => (
+  <Container>
+    <div>Hello world!</div>
+  </Container>
+)
