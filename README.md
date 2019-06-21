@@ -2,6 +2,12 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ccfbf0c8-b198-4da0-b6fe-862141392c7c/deploy-status)](https://app.netlify.com/sites/ecstatic-curran-4e7e40/deploys)
 
+### Tech Stack
+
+- Javascript
+- React, GraphQL
+- Gatsby, Netlify
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
