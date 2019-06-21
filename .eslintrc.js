@@ -15,6 +15,6 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-  plugins: ["react", "prettier", "jsx-ally"],
+  plugins: ["react", "prettier", "jsx-ally", "markdown"],
   rules: {},
 }

@@ -5,6 +5,9 @@ export default () => (
     <p>Hello!</p>
     <h3>My name is Yehui Zhang</h3>
 
-    <p>Site started on June 10, 2019</p>
+    <p>
+      This site is currently under construction. It will be avialable shortly.
+      Stay tuned.
+    </p>
   </div>
 )
