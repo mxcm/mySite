@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, StaticQuery } from "gatsby"
 
-import favicon from "../static/images/favicon.png"
+import favicon from "../../static/images/favicon.png"
 
 const config = require("../config/basics")
 
