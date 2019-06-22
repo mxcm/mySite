@@ -10,8 +10,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
-
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
