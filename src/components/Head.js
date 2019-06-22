@@ -2,6 +2,8 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, StaticQuery } from "gatsby"
 
+import favicon from "../static/images/favicon.png"
+
 const config = require("../config/basics")
 
 const Head = () => (
@@ -20,6 +22,7 @@ const Head = () => (
     render={data => (
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
+        <link rel="shortcut icon" href={favicon} />
       </Helmet>
     )}
   />

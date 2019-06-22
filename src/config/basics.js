@@ -5,4 +5,6 @@ module.exports = {
   siteDescription: `TODO`,
 
   siteKeywords: `Yehui Zhang, Zhang Yehui, Yehui, Software Engineer, Engineer, Software Developer`,
+
+  googleAnalyticsTrackingID: "UA-142487371-1",
 }

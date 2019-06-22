@@ -5,6 +5,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.googleAnalyticsTrackingID,
+      },
+    },
   ],
   siteMetadata: {
     title: config.siteTitle,
