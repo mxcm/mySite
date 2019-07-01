@@ -1,6 +1,6 @@
 import React from "react"
-import Head from "./Head.js"
-import { GlobalStyle } from "../styles/index"
+import { Head, Nav } from "@components"
+import { GlobalStyle } from "@styles"
 import { graphql, StaticQuery } from "gatsby"
 
 const query = graphql`
@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
     <div id="root">
       <Head />
       <GlobalStyle />
+      <Nav />
       {children}
     </div>
   )
