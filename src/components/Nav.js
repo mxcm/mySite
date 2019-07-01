@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Helmet from "react-helmet"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import { menuItems, navHeight } from "../config/basics"
+import { resumeLink, menuItems, navHeight } from "../config/basics"
 import Menu from "./Menu"
 import styled from "styled-components"
 import { theme, mixins, media } from "@styles"
@@ -34,7 +34,6 @@ const NavContainer = styled.header`
   ${media.tablet`padding: 0 25px;`};
 `
 const Navbar = styled.nav`
-  ${mixins.flexBetween};
   position: relative;
   width: 100%;
   color: ${colors.lightestSlate};
@@ -42,98 +41,10 @@ const Navbar = styled.nav`
   counter-reset: item 0;
   z-index: 12;
 `
-const Logo = styled.div`
-  ${mixins.flexCenter};
-`
-const LogoLink = styled.a`
-  display: block;
-  color: ${colors.green};
-  width: 42px;
-  height: 42px;
-  &:hover,
-  &:focus {
-    svg {
-      fill: ${colors.transGreen};
-    }
-  }
-  svg {
-    fill: none;
-    transition: ${theme.transition};
-    user-select: none;
-  }
-`
-const Hamburger = styled.div`
-  ${mixins.flexCenter};
-  overflow: visible;
-  margin: 0 -12px 0 0;
-  padding: 15px;
-  cursor: pointer;
-  transition-timing-function: linear;
-  transition-duration: 0.15s;
-  transition-property: opacity, filter;
-  text-transform: none;
-  color: inherit;
-  border: 0;
-  background-color: transparent;
-  display: none;
-  ${media.tablet`display: flex;`};
-`
-const HamburgerBox = styled.div`
-  position: relative;
-  display: inline-block;
-  width: ${theme.hamburgerWidth}px;
-  height: 24px;
-`
-const HamburgerInner = styled.div`
-  background-color: ${colors.green};
-  position: absolute;
-  width: ${theme.hamburgerWidth}px;
-  height: 2px;
-  border-radius: ${theme.borderRadius};
-  top: 50%;
-  left: 0;
-  right: 0;
-  transition-duration: 0.22s;
-  transition-property: transform;
-  transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
-  transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
-  transition-timing-function: cubic-bezier(
-    ${props =>
-      props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`}
-  );
-  &:before,
-  &:after {
-    content: "";
-    display: block;
-    background-color: ${colors.green};
-    position: absolute;
-    left: auto;
-    right: 0;
-    width: ${theme.hamburgerWidth}px;
-    height: 2px;
-    transition-timing-function: ease;
-    transition-duration: 0.15s;
-    transition-property: transform;
-    border-radius: 4px;
-  }
-  &:before {
-    width: ${props => (props.menuOpen ? `100%` : `120%`)};
-    top: ${props => (props.menuOpen ? `0` : `-10px`)};
-    opacity: ${props => (props.menuOpen ? 0 : 1)};
-    transition: ${props =>
-      props.menuOpen ? theme.hamBeforeActive : theme.hamBefore};
-  }
-  &:after {
-    width: ${props => (props.menuOpen ? `100%` : `80%`)};
-    bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
-    transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-    transition: ${props =>
-      props.menuOpen ? theme.hamAfterActive : theme.hamAfter};
-  }
-`
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
+  float: right;
   ${media.tablet`display: none;`};
 `
 const NavList = styled.ol`
@@ -144,7 +55,7 @@ const NavList = styled.ol`
 const NavListItem = styled.li`
   margin: 0 10px;
   position: relative;
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.medium};
   counter-increment: item 1;
   &:before {
     content: "0" counter(item) ".";
@@ -159,7 +70,7 @@ const NavLink = styled(AnchorLink)`
 const ResumeLink = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.medium};
 `
 
 const DELTA = 5
@@ -239,28 +150,6 @@ class Nav extends Component {
           <body className={menuOpen ? "blur" : ""} />
         </Helmet>
         <Navbar>
-          <TransitionGroup>
-            {isMounted && (
-              <CSSTransition classNames="fade" timeout={3000}>
-                <Logo>
-                  <LogoLink href="/" aria-label="home"></LogoLink>
-                </Logo>
-              </CSSTransition>
-            )}
-          </TransitionGroup>
-
-          <TransitionGroup>
-            {isMounted && (
-              <CSSTransition classNames="fade" timeout={3000}>
-                <Hamburger onClick={this.toggleMenu}>
-                  <HamburgerBox>
-                    <HamburgerInner menuOpen={menuOpen} />
-                  </HamburgerBox>
-                </Hamburger>
-              </CSSTransition>
-            )}
-          </TransitionGroup>
-
           <NavLinks>
             <NavList>
               <TransitionGroup>
@@ -288,7 +177,7 @@ class Nav extends Component {
                 <CSSTransition classNames="fadedown" timeout={3000}>
                   <div style={{ transitionDelay: `600ms` }}>
                     <ResumeLink
-                      href="/resume.pdf"
+                      href={resumeLink}
                       target="_blank"
                       rel="nofollow noopener noreferrer"
                     >

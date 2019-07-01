@@ -1,19 +1,19 @@
 import React from "react"
+import styled from "styled-components"
+import { Layout, Hero } from "@components"
+import { mixins } from "@styles"
 
-import Layout from "../components/Layout"
-import { Main } from "../styles/index"
+const Main = styled.main`
+  ${mixins.sidePadding};
+  counter-reset: section;
+  margin: 0 auto;
+  width: 100%;
+`
 
 export default () => (
   <Layout>
     <Main>
-      <p>Hello!</p>
-      <h3>My name is Yehui Zhang</h3>
-      <h3>我的名字是张烨辉</h3>
-
-      <p>
-        This site is currently under construction. It will be avialable shortly.
-        Stay tuned.
-      </p>
+      <Hero />
     </Main>
   </Layout>
 )

@@ -1,5 +1,7 @@
 import React from "react"
-import { IconGithub, IconLinkedin } from "./icons/index"
+import styled from "styled-components"
+import { theme, mixins } from "@styles"
+const { colors, fontSizes, fonts } = theme
 
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
@@ -11,14 +13,19 @@ const FooterContainer = styled.footer`
   height: auto;
   min-height: 70px;
 `
-
-const SocialContainer = styled.div`
-  color: ${colors.lightSlate};
-  width: 100%;
-  max-width: 270px;
-  margin: 0 auto 10px;
-  display: none;
-  ${media.tablet`display: block;`};
+const Copy = styled.div`
+  margin: 10px 0;
+  font-family: ${fonts.SourceCode};
+  font-size: ${fontSizes.xsmall};
+  line-height: 1;
 `
 
-const Footer = () => <div></div>
+const Footer = ({ githubInfo }) => (
+  <FooterContainer>
+    <Copy>
+      <div>Designed &amp; Built by Yehui Zhang</div>
+    </Copy>
+  </FooterContainer>
+)
+
+export default Footer
