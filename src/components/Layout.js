@@ -1,26 +1,17 @@
 import React from "react"
-import Head from "./Head.js"
-import { GlobalStyle } from "../styles/index"
-import { graphql, StaticQuery } from "gatsby"
-
-const query = graphql`
-  query siteMetadata {
-    site {
-      siteMetadata {
-        description
-        siteUrl
-        title
-      }
-    }
-  }
-`
+import { Head, Nav, Footer } from "@components"
+import { GlobalStyle } from "@styles"
 
 const Layout = ({ children }) => {
   return (
     <div id="root">
       <Head />
       <GlobalStyle />
-      {children}
+      <div className="container">
+        <Nav />
+        {children}
+        <Footer />
+      </div>
     </div>
   )
 }
