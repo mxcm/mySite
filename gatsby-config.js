@@ -13,13 +13,13 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      // options: {
-      //   name: `content`,
-      //   path: `${__dirname}/src/content/`,
-      // },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `content`,
+    //     path: `${__dirname}/src/content/`,
+    //   },
+    // },
 
     {
       resolve: `gatsby-transformer-remark`,
