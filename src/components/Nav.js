@@ -53,6 +53,7 @@ const NavList = styled.ol`
   }
 `
 const NavListItem = styled.li`
+  display: inline;
   margin: 0 10px;
   position: relative;
   font-size: ${fontSizes.medium};
@@ -88,7 +89,6 @@ class Nav extends Component {
 
     window.addEventListener("scroll", () => this.handleScroll())
     window.addEventListener("resize", () => this.handleResize())
-    window.addEventListener("keydown", e => this.handleKeydown(e))
   }
 
   componentWillUnmount() {
@@ -96,7 +96,6 @@ class Nav extends Component {
 
     window.removeEventListener("scroll", () => this.handleScroll())
     window.removeEventListener("resize", () => this.handleResize())
-    window.removeEventListener("keydown", e => this.handleKeydown(e))
   }
 
   handleScroll = () => {
@@ -131,16 +130,6 @@ class Nav extends Component {
     }
   }
 
-  handleKeydown = e => {
-    if (!this.state.menuOpen) {
-      return
-    }
-
-    if (e.which === 27 || e.key === "Escape") {
-      this.toggleMenu()
-    }
-  }
-
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state
 
@@ -152,45 +141,22 @@ class Nav extends Component {
         <Navbar>
           <NavLinks>
             <NavList>
-              <TransitionGroup>
-                {isMounted &&
-                  menuItems &&
-                  menuItems.map(({ item, url }, index) => (
-                    <CSSTransition
-                      key={index}
-                      classNames="fadedown"
-                      timeout={3000}
-                    >
-                      <NavListItem
-                        key={index}
-                        style={{ transitionDelay: `${index * 100}ms` }}
-                      >
-                        <NavLink href={url}>{item}</NavLink>
-                      </NavListItem>
-                    </CSSTransition>
-                  ))}
-              </TransitionGroup>
+              {menuItems.map(({ item, url }, index) => (
+                <NavListItem key={index}>
+                  <NavLink href={url}>{item}</NavLink>
+                </NavListItem>
+              ))}
             </NavList>
 
-            <TransitionGroup>
-              {isMounted && (
-                <CSSTransition classNames="fadedown" timeout={3000}>
-                  <div style={{ transitionDelay: `600ms` }}>
-                    <ResumeLink
-                      href={resumeLink}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                    >
-                      Resume
-                    </ResumeLink>
-                  </div>
-                </CSSTransition>
-              )}
-            </TransitionGroup>
+            <ResumeLink
+              href={resumeLink}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              Resume
+            </ResumeLink>
           </NavLinks>
         </Navbar>
-
-        <Menu menuOpen={menuOpen} toggleMenu={this.toggleMenu} />
       </NavContainer>
     )
   }

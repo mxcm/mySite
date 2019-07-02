@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout, Hero } from "@components"
+import { Layout, Hero, About, Projects } from "@components"
 import { mixins } from "@styles"
 
 const Main = styled.main`
@@ -8,12 +8,15 @@ const Main = styled.main`
   counter-reset: section;
   margin: 0 auto;
   width: 100%;
+  padding-top: 50px;
 `
 
 export default () => (
   <Layout>
     <Main>
       <Hero />
+      <About />
+      <Projects />
     </Main>
   </Layout>
 )

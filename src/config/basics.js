@@ -13,10 +13,10 @@ module.exports = {
       item: "About",
       url: "#about",
     },
-    {
-      item: "Experience",
-      url: "#jobs",
-    },
+    // {
+    //   item: "Experience",
+    //   url: "#jobs",
+    // },
     {
       item: "Projects",
       url: "#projects",

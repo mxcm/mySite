@@ -1,4 +1,3 @@
-import IconGithub from "./github.svg"
-import IconLinkedin from "./linkedin.svg"
+import { IconGithub, IconFolder, IconExternal } from "./projectIcons"
 
-export { IconGithub, IconLinkedin }
+export { IconGithub, IconFolder, IconExternal }
