@@ -15,10 +15,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/src/content/`,
-      },
+      // options: {
+      //   name: `content`,
+      //   path: `${__dirname}/src/content/`,
+      // },
     },
 
     {
