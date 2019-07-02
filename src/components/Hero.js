@@ -7,7 +7,7 @@ const { colors, fontSizes, fonts } = theme
 const HeroContainer = styled(Section)`
   flex-direction: column;
   align-items: flex-start;
-  min-height: 100vh;
+  min-height: 1vh;
   ${media.tablet`padding-top: 150px;`};
   div {
     width: 100%;
