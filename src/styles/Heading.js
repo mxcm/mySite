@@ -31,8 +31,8 @@ const Heading = styled.h3`
     width: 300px;
     background-color: ${colors.mediumGrey};
     position: relative;
-    top: -5px;
-    margin-left: 20px;
+    top: 2px;
+    margin-left: 15px;
     ${media.desktop`width: 200px`};
     ${media.tablet`width: 100%;`};
     ${media.thone`margin-left: 10px;`};

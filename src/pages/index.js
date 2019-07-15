@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Layout, Hero, About, Projects } from "@components"
+import { Layout, Hero, About, Projects, Contacts } from "@components"
 import { mixins } from "@styles"
 
 const Main = styled.main`
@@ -17,6 +17,7 @@ export default () => (
       <Hero />
       <About />
       <Projects />
+      <Contacts />
     </Main>
   </Layout>
 )

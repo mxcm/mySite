@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group"
 // import { srConfig } from '@config';
 import { IconGithub, IconExternal, IconFolder } from "@components/icons"
 import styled from "styled-components"
-import { theme, mixins, media, Section, Button } from "@styles"
+import { Heading, theme, mixins, media, Section, Button } from "@styles"
 const { colors, fontSizes, fonts } = theme
 
 const ProjectsContainer = styled(Section)`
@@ -129,6 +129,7 @@ const Projects = ({ data }) => {
 
   return (
     <ProjectsContainer id="projects">
+      <Heading>Projects</Heading>
       <ProjectsGrid>
         <TransitionGroup className="projects">
           {projects &&

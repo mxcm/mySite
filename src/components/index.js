@@ -5,5 +5,6 @@ import Footer from "./Footer"
 import Hero from "./Hero"
 import About from "./About"
 import Projects from "./Projects"
+import Contacts from "./Contacts"
 
-export { Head, Nav, Layout, Footer, Hero, About, Projects }
+export { Head, Nav, Layout, Footer, Hero, About, Projects, Contacts }
