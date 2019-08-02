@@ -4,7 +4,7 @@ module.exports = {
 
   siteDescription: `TODO`,
   siteKeywords: `Yehui Zhang, Zhang Yehui, Yehui, Software Engineer, Engineer, Software Developer`,
-  resumeLink: `https://drive.google.com/file/d/1j3Bd_eZwigiN10NmrdIe1P6BzZbzN2Py/view?usp=sharing`,
+  resumeLink: `https://drive.google.com/open?id=1BJQd2inhK68IEvu3-gJcRuZKJv_D2mmg`,
 
   googleAnalyticsTrackingID: "UA-142487371-1",
 
